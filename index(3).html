@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新加坡 5 天 4 夜自由行行程與詳細交通指南 (更新版)</title>
+    <style>
+        :root {
+            --primary-color: #008080;
+            --secondary-color: #e6f2f2;
+            --accent-color: #e64a19;
+            --text-color: #333333;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --transit-bg: #f8f9fa;
+            --transit-border: #dae0e5;
+            --info-bg: #fff8e1;
+            --info-border: #ffe082;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 24px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 4px 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .hotel-info {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* 頁籤 Tab 樣式 */
+        .tabs-container {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 12px 16px;
+            background-color: #e0ecec;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            background-color: #cce0e0;
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 128, 128, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .day-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .day-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+        }
+
+        .day-badge {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+
+        .day-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px dashed var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 22px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid white;
+        }
+
+        .time-tag {
+            font-weight: bold;
+            color: #555;
+            font-size: 0.95rem;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        .item-content {
+            background: #fafafa;
+            border-left: 3px solid var(--primary-color);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .item-content p {
+            margin: 4px 0;
+            font-size: 0.95rem;
+        }
+
+        .transit-box {
+            background-color: var(--transit-bg);
+            border: 1px solid var(--transit-border);
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: #444;
+        }
+
+        .transit-box h4 {
+            margin: 0 0 6px 0;
+            font-size: 0.9rem;
+            color: #2b5797;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .transit-box ul {
+            margin: 0 0 8px 0;
+            padding-left: 18px;
+        }
+
+        .transit-box li {
+            margin-bottom: 4px;
+        }
+
+        .transit-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-box {
+            background-color: var(--info-bg);
+            border: 1px solid var(--info-border);
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: #795548;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background-color: #fff;
+            color: #1a73e8;
+            border: 1px solid #dadce0;
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-top: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .map-btn:hover {
+            background-color: #e8f0fe;
+            border-color: #1a73e8;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+
+        .map-btn-spot {
+            margin-left: 6px;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tag-food {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .tag-spot {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>新加坡 5 天 4 夜自由行行程與詳細交通指南</h1>
+        <p>🗓️ 11/13 (三) ~ 11/17 (日)</p>
+        <div class="hotel-info">
+            🏨 住宿：<a href="https://www.google.com/maps/search/?api=1&query=Hotel+Mi+Rochor" target="_blank" style="color: white; text-decoration: underline;">米梧槽酒店 (Hotel Mi Rochor)</a>（緊鄰藍線 DT13 Rochor 地鐵站）
+        </div>
+    </header>
+
+    <!-- 頁籤按鈕 (Tabs Bar) -->
+    <div class="tabs-container">
+        <button class="tab-btn active" onclick="openDay(event, 'day1')">Day 1 (11/13)</button>
+        <button class="tab-btn" onclick="openDay(event, 'day2')">Day 2 (11/14)</button>
+        <button class="tab-btn" onclick="openDay(event, 'day3')">Day 3 (11/15)</button>
+        <button class="tab-btn" onclick="openDay(event, 'day4')">Day 4 (11/16)</button>
+        <button class="tab-btn" onclick="openDay(event, 'day5')">Day 5 (11/17)</button>
+    </div>
+
+    <!-- Day 1 頁籤內容 -->
+    <div id="day1" class="tab-content active">
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-badge">Day 1</span>
+                <h2 class="day-title">11/13 (三) 抵達星耀樟宜、市區 Check-in 與在地宵夜</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-tag">15:00</span>
+                    <div class="item-content">
+                        <p>🛬 抵達新加坡樟宜機場 (SIN)。出關後可先將行李暫存或直接步行前往第一航廈相連的星耀樟宜。</p>
+                        <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Changi+Airport+Singapore" target="_blank">📍 樟宜機場地點</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">16:30 - 18:30</span>
+                    <div class="item-content">
+                        <p>📍 <span class="tag-spot">星耀樟宜 (Jewel Changi Airport)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Jewel+Changi+Airport" target="_blank">📍 景點地點</a>
+                        </p>
+                        <p>欣賞雨漩渦巨型瀑布、拍照採買。</p>
+                        <p>🍦 <span class="tag-food">美食首嚐：BIRD OF PARADISE (Jewel 分店)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Bird+of+Paradise+Gelato+Boutique+Jewel+Changi" target="_blank">📍 地點</a>
+                        </p>
+                        <div class="info-box">⏰ 營業時間：12:00 - 22:00。必試招牌：白花香（White Chrysanthemum）皮埃蒙特榛果米香意式冰淇淋。</div>
+                        
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：星耀樟宜 ➔ 米梧槽酒店 Check-in</h4>
+                            <ul>
+                                <li><b>搭乘地鐵 (約 45 分鐘)</b>：於樟宜機場站 (CG2) 搭綠線支線至「丹那美拉站 (EW4 Tanah Merah)」，跨月台換乘綠線往 Tuas Link 方向至「武吉士站 (EW12 Bugis)」，轉藍線 1 站至「梧槽站 (DT13 Rochor)」，B 出口步行 1 分鐘抵達飯店。</li>
+                                <li><b>計程車 / Grab (約 20 分鐘)</b>：直接叫車至 Hotel Mi Rochor，車資約 20~28 SGD。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Jewel+Changi+Airport&destination=Hotel+Mi+Rochor&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (星耀樟宜 ➔ 米梧槽酒店)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">19:00 - 22:00</span>
+                    <div class="item-content">
+                        <p>🏨 前往 <span class="tag-spot">米梧槽酒店 Check-in</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Hotel+Mi+Rochor" target="_blank">📍 飯店地點</a>
+                        </p>
+                        <p>🍜 <span class="tag-food">晚餐/宵夜：新源記鮮魚米粉</span> 
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Xin+Yuan+Ji+Bugis" target="_blank">📍 地點</a> 
+                            、<span class="tag-food">一家人甜品店 (Yat Ka Yan)</span> 
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Yat+Ka+Yan+Dessert+Bugis" target="_blank">📍 地點</a> 
+                            及 <span class="tag-food">阿秋甜品</span> 
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Ah+Chew+Desserts+Bugis" target="_blank">📍 地點</a>
+                        </p>
+                        <p>飯後散步前往 <span class="tag-spot">甘榜格南 / 蘇丹清真寺</span> 欣賞夜景。
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Sultan+Mosque+Singapore" target="_blank">📍 景點地點</a>
+                        </p>
+                        <div class="info-box">
+                            ⏰ 營業時間須知：<br>
+                            • 新源記：11:30 - 23:00<br>
+                            • 一家人甜品店 (Yat Ka Yan)：13:30 - 23:00 (週二公休，11/13週三正常營業)<br>
+                            • 阿秋甜品：12:30 - 00:00 (週五週六至 01:00)
+                        </div>
+                        
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：米梧槽酒店 ➔ 武吉士美食街 ➔ 甘榜格南</h4>
+                            <ul>
+                                <li><b>步行 (約 8~12 分鐘)</b>：飯店沿 Rochor Road / Middle Road 散步即可連續吃遍新源記與一家人/阿秋甜品，再步行 5 分鐘抵達蘇丹清真寺。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Mi+Rochor&destination=Yat+Ka+Yan+Dessert&travelmode=walking" target="_blank">🗺️ Google地圖路線導航 (飯店 ➔ 一家人甜品/武吉士美食)</a>
+                            <br>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Yat+Ka+Yan+Dessert&destination=Sultan+Mosque+Singapore&travelmode=walking" target="_blank">🗺️ Google地圖路線導航 (一家人甜品 ➔ 蘇丹清真寺)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 2 頁籤內容 -->
+    <div id="day2" class="tab-content">
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-badge">Day 2</span>
+                <h2 class="day-title">11/14 (四) 聖淘沙環球影城狂歡與濱海灣雙溫室夢幻夜景</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-tag">08:45 - 09:30</span>
+                    <div class="item-content">
+                        <p>🚌 <b>交通移動：米梧槽酒店 ➔ 聖淘沙環球影城</b></p>
+                        <div class="transit-box">
+                            <h4>🚌 路線細節與步驟 (約 35 - 45 分鐘)</h4>
+                            <ul>
+                                <li><b>地鐵紫線 + 輕軌</b>：自飯店步行至 Little India 站 (紫線 NE7) 或自 Rochor 站搭 1 站藍線至 Chinatown 轉紫線，搭至終點站「港灣站 (NE1 HarbourFront)」。再至怡豐城 (VivoCity) 3 樓搭乘聖淘沙輕軌至名勝世界站。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Mi+Rochor&destination=Universal+Studios+Singapore&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (飯店 ➔ 環球影城)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">09:30 - 15:30</span>
+                    <div class="item-content">
+                        <p>🎢 <span class="tag-spot">新加坡環球影城 (Universal Studios Singapore)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Singapore" target="_blank">📍 景點地點</a>
+                        </p>
+                        <p>一早開園進場狂歡。午餐可在園區或馬來西亞美食街解決。</p>
+                        
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：聖淘沙環球影城 ➔ 濱海灣花園</h4>
+                            <ul>
+                                <li><b>輕軌 + 地鐵 (約 30 分鐘)</b>：搭乘聖淘沙輕軌返回港灣站 (NE1)，轉乘紫線至 Chinatown 站，換乘藍線 (DT Line) 至「Bayfront 站 (DT16)」，出站即達濱海灣花園入口。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Universal+Studios+Singapore&destination=Gardens+by+the+Bay&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (環球影城 ➔ 濱海灣花園)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">16:00 - 19:30</span>
+                    <div class="item-content">
+                        <p>🌴 <span class="tag-spot">濱海灣花園：花穹 (Flower Dome) & 雲霧林 (Cloud Forest)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Cloud+Forest+Gardens+by+the+Bay" target="_blank">📍 景點地點</a>
+                        </p>
+                        <p>參觀世界最大玻璃溫室「花穹」與擁有 35 米室內瀑布的夢幻「雲霧林」。</p>
+                        <div class="info-box">⏰ 營業時間：09:00 - 21:00 (最晚入場 20:30)。建議 16:00 進館可同時欣賞白天與傍晚點燈景緻。</div>
+
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：溫室雙館 ➔ 魚尾獅公園 (沿灣散步)</h4>
+                            <ul>
+                                <li><b>步行/地鐵 (約 15 分鐘)</b>：自濱海灣花園可沿濱海灣金沙水岸步道散步至魚尾獅公園（約 20 分鐘步行，亦可搭藍線 1 站至 Downtown 站）。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Cloud+Forest+Gardens+by+the+Bay&destination=Merlion+Park+Singapore&travelmode=walking" target="_blank">🗺️ Google地圖路線導航 (濱海灣花園 ➔ 魚尾獅公園)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">19:30 - 21:30</span>
+                    <div class="item-content">
+                        <p>🦁 <span class="tag-spot">魚尾獅公園 (Merlion Park)</span> 觀賞夜景與打卡。
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Merlion+Park+Singapore" target="_blank">📍 景點地點</a>
+                        </p>
+                        <p>🍲 <span class="tag-food">晚餐：松發肉骨茶 (唐城坊店 / 克拉碼頭店)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Song+Fa+Bak+Kut+Teh+Chinatown+Point" target="_blank">📍 地點</a>
+                        </p>
+                        <div class="info-box">⏰ 松發肉骨茶營業時間：10:00 - 21:30。經典濃郁胡椒湯頭可免費加湯！</div>
+                        
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：魚尾獅公園 ➔ 松發肉骨茶 ➔ 米梧槽酒店</h4>
+                            <ul>
+                                <li><b>散步 + 地鐵藍線</b>：從魚尾獅公園散步至克拉碼頭或 Chinatown 唐城坊松發；吃完後搭乘藍線自 Chinatown 站直達 Rochor 站，車程僅 8 分鐘返回飯店。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Merlion+Park+Singapore&destination=Song+Fa+Bak+Kut+Teh+Chinatown+Point&travelmode=walking" target="_blank">🗺️ Google地圖路線導航 (魚尾獅公園 ➔ 松發肉骨茶)</a>
+                            <br>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Song+Fa+Bak+Kut+Teh+Chinatown+Point&destination=Hotel+Mi+Rochor&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (松發肉骨茶 ➔ 米梧槽酒店)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 3 頁籤內容 -->
+    <div id="day3" class="tab-content">
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-badge">Day 3</span>
+                <h2 class="day-title">11/15 (五) 舊城文化巡禮、海南雞飯名店與老巴剎沙嗲夜間野生動物園</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-tag">09:00 - 11:30</span>
+                    <div class="item-content">
+                        <p>🏮 <span class="tag-spot">牛車水 (Chinatown)</span> 漫步歷史老街與佛牙寺龍華院。
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Chinatown+Singapore" target="_blank">📍 景點地點</a>
+                        </p>
+                        <p>☕ <span class="tag-food">早餐：亞坤咖椰吐司 (亞密街總店)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Ya+Kun+Kaya+Toast+Far+East+Square" target="_blank">📍 地點</a>
+                        </p>
+                        <p>🥥 <span class="tag-food">消暑飲品：Mr. Coconut (Chinatown Point 分店)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Mr+Coconut+Chinatown+Point" target="_blank">📍 地點</a>
+                        </p>
+                        <div class="info-box">⏰ 營業時間：亞坤 07:30 - 16:30、Mr. Coconut 10:00 - 22:00。必點 Mr. Coconut 椰子冰沙 (Coconut Shake)！</div>
+
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：米梧槽酒店 ➔ 牛車水亞坤 ➔ 文東記海南雞飯</h4>
+                            <ul>
+                                <li><b>飯店 ➔ 牛車水 (地鐵約 12 分鐘)</b>：Rochor 站搭藍線直達「Chinatown 站 (DT19)」。</li>
+                                <li><b>牛車水 ➔ 文東記 (約 20 分鐘)</b>：於 Chinatown 站搭紫線至 Novena 站或轉搭公車 130、145 至 Balestier Road 文東記總店。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Mi+Rochor&destination=Ya+Kun+Kaya+Toast+Far+East+Square&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (飯店 ➔ 亞坤總店)</a>
+                            <br>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Ya+Kun+Kaya+Toast+Far+East+Square&destination=Boon+Tong+Kee+Balestier&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (亞坤 ➔ 文東記海南雞飯 Balestier)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">12:00 - 14:00</span>
+                    <div class="item-content">
+                        <p>🍗 <span class="tag-food">午餐：文東記海南雞飯 (Boon Tong Kee Balestier 總店)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Boon+Tong+Kee+Balestier" target="_blank">📍 地點</a>
+                        </p>
+                        <div class="info-box">⏰ 營業時間：11:00 - 15:00, 15:30 - 21:30。新加坡極具盛名的白斬雞名店，雞肉滑嫩、雞油飯香氣濃郁。</div>
+
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：文東記 ➔ 老巴剎沙嗲街 (Lau Pa Sat)</h4>
+                            <ul>
+                                <li><b>地鐵/公車 (約 25 分鐘)</b>：搭乘地鐵至 Telok Ayer 站 (DT18) 或 Raffles Place 站，步行 3 分鐘即達老巴剎美食廣場。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Boon+Tong+Kee+Balestier&destination=Lau+Pa+Sat&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (文東記 ➔ 老巴剎)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">16:30 - 18:00</span>
+                    <div class="item-content">
+                        <p>🍢 <span class="tag-food">傍晚美食：老巴剎 (Lau Pa Sat) 戶外沙嗲街</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Lau+Pa+Sat+Singapore" target="_blank">📍 地點</a>
+                        </p>
+                        <div class="info-box">⏰ 營業時間：老巴剎 24 小時開放；戶外 Satay Street（7號與8號攤位最知名）每日約 17:00 開攤。現場封街烤烤串極具氛圍！</div>
+
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：老巴剎 ➔ 夜間野生動物園 (Night Safari)</h4>
+                            <ul>
+                                <li><b>最推薦搭法 (Grab / 計程車約 25-30 分鐘)</b>：多人同行直接叫車直達門口，車資約 22~30 SGD。</li>
+                                <li><b>大眾運輸 (約 50 分鐘)</b>：搭地鐵紅線至 Khatib 站 (NS14)，轉乘萬禮接駁車 (Mandai Shuttle) 約 15 分鐘直達。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Lau+Pa+Sat&destination=Night+Safari+Singapore&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (老巴剎 ➔ 夜間野生動物園)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">18:30 - 22:00</span>
+                    <div class="item-content">
+                        <p>🐾 <span class="tag-spot">夜間野生動物園 (Night Safari)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Night+Safari+Singapore" target="_blank">📍 景點地點</a>
+                        </p>
+                        <p>19:15 第一批入園觀賞精采表演、搭乘遊園小火車與夜間探索步道。</p>
+                        <div class="info-box">⏰ 營業時間：19:15 - 00:00。建議提前線上預約 19:15 入園梯次。</div>
+
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：夜間野生動物園 ➔ 米梧槽酒店</h4>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Night+Safari+Singapore&destination=Hotel+Mi+Rochor&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (夜間動物園 ➔ 米梧槽酒店)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 4 頁籤內容 -->
+    <div id="day4" class="tab-content">
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-badge">Day 4</span>
+                <h2 class="day-title">11/16 (六) 藝術文青街區、加東叻沙大決鬥與芽籠宵夜</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-tag">09:30 - 13:00</span>
+                    <div class="item-content">
+                        <p>🎨 <span class="tag-spot">小印度 & 哈芝巷 (Haji Lane)</span> 塗鴉彩繪街與風格選物店。
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Haji+Lane+Singapore" target="_blank">📍 景點地點</a>
+                        </p>
+                        <p>🍜 <span class="tag-food">在地早午餐：結霜橋叻沙 (Sungei Road Laksa)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Sungei+Road+Laksa" target="_blank">📍 地點</a>
+                        </p>
+                        <p>🍦 <span class="tag-food">下午茶：BIRD OF PARADISE (Beach Road 旗艦店)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Bird+of+Paradise+Gelato+Boutique+Beach+Road" target="_blank">📍 地點</a>
+                        </p>
+                        <p>⛪ <span class="tag-spot">讚美廣場 (CHIJMES)</span> 歐式哥德建築美拍勝地。
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=CHIJMES+Singapore" target="_blank">📍 景點地點</a>
+                        </p>
+                        <div class="info-box">
+                            ⏰ 營業時間須知：<br>
+                            • 結霜橋叻沙：09:30 - 16:00 (週三公休，週六正常營業)。炭火烹調傳統叻沙！<br>
+                            • BIRD OF PARADISE Beach Road：12:00 - 22:00
+                        </div>
+
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：飯店/結霜橋 ➔ 哈芝巷 ➔ 讚美廣場 ➔ 加東 (Katong)</h4>
+                            <ul>
+                                <li><b>讚美廣場 ➔ 加東 (地鐵棕線約 25 分鐘)</b>：自 City Hall 附近 Maxwell / Marina Bay 站搭棕線 (TE Line) 直達「Marine Parade 站 (TE26)」，出站即達加東舊街區。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Mi+Rochor&destination=Sungei+Road+Laksa&travelmode=walking" target="_blank">🗺️ Google地圖路線導航 (飯店 ➔ 結霜橋叻沙)</a>
+                            <br>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=CHIJMES+Singapore&destination=328+Katong+Laksa&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (讚美廣場 ➔ 加東美食區)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">14:00 - 17:00</span>
+                    <div class="item-content">
+                        <p>🏘️ <span class="tag-spot">加東 (Katong) 娘惹彩樓街屋漫步</span>。</p>
+                        <p>🍜 <span class="tag-food">叻沙雙雄評比：328 加東叻沙</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=328+Katong+Laksa" target="_blank">📍 地點</a>
+                            與 <span class="tag-food">Janggut Laksa (始祖加東叻沙 Roxy Square 店)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Janggut+Laksa+Roxy+Square" target="_blank">📍 地點</a>
+                        </p>
+                        <div class="info-box">
+                            ⏰ 營業時間須知：<br>
+                            • 328加東叻沙：09:30 - 21:30<br>
+                            • Janggut Laksa (Roxy Square)：10:30 - 16:30。創始老店，湯頭椰奶濃郁順口！
+                        </div>
+
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：加東舊街區 ➔ 克拉碼頭 (Clarke Quay)</h4>
+                            <ul>
+                                <li><b>地鐵 (約 25 分鐘)</b>：Marine Parade 站搭棕線至 Outram Park 站轉乘紫線 1 站至「Clarke Quay 站 (NE5)」。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=328+Katong+Laksa&destination=Clarke+Quay+Singapore&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (加東 ➔ 克拉碼頭)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">17:30 - 22:30</span>
+                    <div class="item-content">
+                        <p>🌃 <span class="tag-spot">克拉碼頭 (Clarke Quay)</span> 河畔夜景。</p>
+                        <p>🦀 <span class="tag-food">晚餐：八道館魚蝦蟹</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Badaguan+Seafood+Clarke+Quay" target="_blank">📍 地點</a>
+                            與 <span class="tag-food">168 CMY Satay</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=168+CMY+Satay" target="_blank">📍 地點</a>
+                        </p>
+                        <p>🐸 <span class="tag-food">宵夜首選：芽籠九巷明輝田雞粥 (Geylang Lor 9 Ming Hui)</span>
+                            <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Geylang+Lor+9+Ming+Hui+Frog+Porridge" target="_blank">📍 地點</a>
+                        </p>
+                        <div class="info-box">
+                            ⏰ 營業時間須知：<br>
+                            • 八道館：11:00 - 23:00 (招牌辣椒螃蟹搭配炸饅頭)<br>
+                            • 168 CMY Satay：10:00 - 19:00 (週一公休)<br>
+                            • 芽籠明輝田雞粥：16:00 - 04:00 (深夜宵夜地標！宮保田雞搭香濃白粥絕配)
+                        </div>
+
+                        <div class="transit-box">
+                            <h4>🚌 路線導航：克拉碼頭 ➔ 芽籠明輝田雞粥 ➔ 米梧槽酒店</h4>
+                            <ul>
+                                <li><b>克拉碼頭 ➔ 芽籠 (約 15 分鐘)</b>：搭乘 Grab/計程車約 12-15 分鐘直達芽籠九巷（或搭綠線地鐵至 Kallang 站步行 8 分鐘）。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Clarke+Quay+Singapore&destination=Geylang+Lor+9+Ming+Hui+Frog+Porridge&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (克拉碼頭 ➔ 芽籠明輝田雞粥)</a>
+                            <br>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Geylang+Lor+9+Ming+Hui+Frog+Porridge&destination=Hotel+Mi+Rochor&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (芽籠明輝 ➔ 米梧槽酒店)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 5 頁籤內容 -->
+    <div id="day5" class="tab-content">
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-badge">Day 5</span>
+                <h2 class="day-title">11/17 (日) 悠閒採買與賦歸</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-tag">09:00 - 11:00</span>
+                    <div class="item-content">
+                        <p>🛍️ 飯店周邊（武吉士/小印度）採買伴手禮並辦理退房。</p>
+                        <a class="map-btn map-btn-spot" href="https://www.google.com/maps/search/?api=1&query=Hotel+Mi+Rochor" target="_blank">📍 米梧槽酒店地點</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">11:00 - 11:45</span>
+                    <div class="item-content">
+                        <p>🚌 <b>交通移動：米梧槽酒店 ➔ 樟宜機場 (SIN)</b></p>
+                        <div class="transit-box">
+                            <h4>🚌 路線細節與步驟 (預留 30 - 45 分鐘)</h4>
+                            <ul>
+                                <li><b>地鐵 (約 40 分鐘)</b>：從 Rochor 站搭藍線至 Bugis 站，換乘綠線往 Changi Airport 方向，於 Tanah Merah 轉乘機場支線至樟宜機場站 (CG2)。</li>
+                                <li><b>Grab / 計程車 (約 20 分鐘)</b>：飯店門口叫車直達機場，車資約 20~25 SGD。</li>
+                            </ul>
+                            <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Mi+Rochor&destination=Changi+Airport+Singapore&travelmode=transit" target="_blank">🗺️ Google地圖路線導航 (飯店 ➔ 樟宜機場)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-tag">14:00</span>
+                    <div class="item-content">
+                        <p>🛫 搭乘 14:00 班機返回溫馨的家。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openDay(evt, dayName) {
+        var i, tabcontent, tablinks;
+        
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active");
+        }
+        
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        
+        document.getElementById(dayName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
